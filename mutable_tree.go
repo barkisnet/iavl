@@ -569,7 +569,6 @@ func (tree *MutableTree) SetVersion(version int64) error {
 		return fmt.Errorf("can't set tree version when tree root is not nil")
 	}
 
-	debug("SAVE EMPTY TREE %v\n", version)
 	tree.ndb.SaveOrphans(version, tree.orphans)
 	err := tree.ndb.ForceSaveEmptyRoot(version)
 	if err != nil {
