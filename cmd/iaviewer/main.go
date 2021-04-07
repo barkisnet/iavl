@@ -116,7 +116,7 @@ func PrintKeys(tree *iavl.MutableTree) {
 }
 
 // parseWeaveKey assumes a separating : where all in front should be ascii,
-// and all afterwards may be ascii or binary
+// and all afterwards may be ascii or binary.
 func parseWeaveKey(key []byte) string {
 	cut := bytes.IndexRune(key, ':')
 	if cut == -1 {
